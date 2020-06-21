@@ -26,6 +26,7 @@ export default function App() {
           {f ? <Redirect to="/" /> : <Afalse />}
         </Route>
         {/* <Route exact path="/dsm/result" component={Dsmresult}/> */}
+        <hr/>
       </div>
     </Router>
   );
