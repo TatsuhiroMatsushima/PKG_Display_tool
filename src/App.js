@@ -1,6 +1,8 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Link,
+  BrowserRouter as Router,
+  Route,
+  Link,
   Redirect
 } from 'react-router-dom';
 
@@ -9,6 +11,8 @@ import Pages from './Pages'
 import Dsm from './Dsm';
 import Top from './Top'
 import Afalse from './Afalse'
+import Dsmresult from './Dsmresult'
+
 
 export default function App() {
 
@@ -20,8 +24,9 @@ export default function App() {
         <Route exact path='/dsm' component={Dsm} />
         <Route exact path='/' component={Top} />
         <Route exact path="/Afalse">
-        {f ? <Redirect to="/" /> : <Afalse />}
+          {f ? <Redirect to="/" /> : <Afalse />}
         </Route>
+        <Route exact path="/dsm/result" component={Dsmresult}/>
       </div>
     </Router>
   );

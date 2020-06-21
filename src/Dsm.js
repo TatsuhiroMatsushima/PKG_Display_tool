@@ -1,60 +1,55 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 export default function Dsm() {
     // これを親に書けば良い？
     // state(変更可能)する時はset...と使う
     // これを子コンポーネント化したい
-    const [pkgs, setPkgs] = React.useState([
-        { pkgname: 'VFCHP', done: false },
-        { pkgname: 'VT-1', done: false },
-        { pkgname: 'EQL', done: false },
-        { pkgname: '64kIF', done: false },
-        { pkgname: 'OCU-5', done: false },
-        { pkgname: 'VT-2', done: false },
-        { pkgname: 'VT-3', done: false },
-        { pkgname: 'SIG', done: false },
-        { pkgname: 'LHSD', done: false },
+    const pkgs = ([
+        { pkgname: 'VFCHP', done: false, number: 0 },
+        { pkgname: 'VT-1', done: false, number: 1 },
+        { pkgname: 'EQL', done: false, number: 2 },
+        { pkgname: '64kIF', done: false, number: 3 },
+        { pkgname: 'OCU-5', done: false, number: 4 },
+        { pkgname: 'VT-2', done: false, number: 5 },
+        { pkgname: 'VT-3', done: false, number: 6 },
+        { pkgname: 'SIG', done: false, number: 7 },
+        { pkgname: 'LHSD', done: false, number: 8 },
     ]);
 
-    // stateのプロパティを変更するテスト
-    const [vals, setVals] = React.useState(
-        { value: 'value初期値', number: 'number初期値' }
+    // PKGとCHの入力管理
+    const [inputs, setVals] = React.useState(
+        { pkgname: '', chnumber: '', blocknumber: '', ifnumber: '' }
     );
 
-    // スプリット演算子
-    const handlenameChange = val => setVals({ ...vals, value: val });
-    // pkgのdoneを変更するss
-    const handledoneChange = () => (setPkgs({ ...pkgs, done: true }))
-
+    // inputsのpkgnameにPKG名を反映
+    const handlenameChange = val => setVals({ ...inputs, pkgname: val });
 
     // 検索ボタン用配列
     const inputnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     // 窓に数値を入れる
+    // inputsのchnumberにch数を反映
     const handleinputnumberChange = i => {
-        let input = document.getElementById('numbers')
-        input.value = input.value + i
-        // あとで消す
-        setVals({ ...vals, number: input.value });
+        // let input = document.getElementById('numbers')
+        // input.value = input.value + i
+        setVals({ ...inputs, chnumber: Number(inputs.chnumber + i) });
     }
-    // 数値初期化
+    // chnumber初期化
     const number_init = () => {
-        let input = document.getElementById('numbers')
-        input.value = ""
-        // あとで消す
-        setVals({ ...vals, number: "number初期値" });
+        // let input = document.getElementById('numbers')
+        // input.value = ""
+        setVals({ ...inputs, chnumber: "" });
     }
 
     // 検索ボタン
     const Calculation_Hilight = () => {
-        const hantei = pkgs.filter(pkg => (pkg.done === true))
-        if (hantei.length < 1) {
-            console.log('pkg.doneが全部false')
-            alert('pkgが選択されていない')
-        }
-        else {
-            console.log('pkg.doneのどれかtrue')
-        }
+        console.log(inputs.chnumber)
+        let block = Math.floor(inputs.chnumber / 16.1)
+        let ifnumber = inputs.chnumber - block * 16
+        inputs.blocknumber = block + 1
+        inputs.ifnumber = ifnumber
+        console.log(`block:${inputs.blocknumber} if:${inputs.ifnumber}`)
     }
 
 
@@ -65,48 +60,58 @@ export default function Dsm() {
             <p>このコンポーネントにツールを書く</p>
             <Link to="/Afalse">Appのaがtrueの時、/にリダイレクト</Link>
 
-
-            <p>PKGを入力してください</p>
+            <h2>PKGを入力してください</h2>
             <p>
+                {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
                     <label className="panel-block">
                         <input
                             type='button'
                             value={pkg.pkgname}
-                            onClick={() => { handlenameChange(`${pkg.pkgname}`) }}
+                            id={`pkg${pkg.number}`}
+                            onClick={() => {
+                                handlenameChange(`${pkg.pkgname}`);
+                                // handledoneChange(`${pkg.number}`)
+                            }
+                            }
                         />
                     </label>
                 ))}
             </p>
-            {/* <NumberInput onChange={handlenameChange} /> */}
-            <p>PKG：{vals.value}</p>
-            <p>CH：{vals.number}</p>
-            <p>CHを入力してください</p>
+            <h3>PKG：{inputs.pkgname}</h3>
+
+            <h2>CHを入力してください</h2>
             <p>
+                {/* CH入力ボタン生成 */}
                 {inputnumbers.map(number => (
                     <label className="input-number">
                         <input
                             type='button'
                             value={number}
-                            onClick={() => { handleinputnumberChange(`${number}`) }}
+                            onClick={() => {
+                                handleinputnumberChange(`${number}`)
+                            }
+                            }
                         />
                     </label>
                 ))}
             </p>
-            <input
+            {/* <input
                 id='numbers'
                 readOnly
-            />
+            /> */}
             <input
                 type='button'
                 value='DELETE'
                 onClick={() => { number_init() }}
             />
+            <h3>CH：{inputs.chnumber}</h3>
             <input
                 type='button'
                 value='検索'
                 onClick={() => { Calculation_Hilight() }}
             />
+            <Link to="/dsm/result">検索！</Link>
         </div>
     )
 }
