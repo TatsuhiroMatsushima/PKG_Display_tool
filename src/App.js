@@ -8,6 +8,9 @@ import './App.css';
 import Pages from './Pages'
 import Dsm from './Dsm';
 import Top from './Top'
+import Boadm from './Boadm'
+import Pts from './Pts'
+import Ptm from './Ptm'
 import Afalse from './Afalse'
 // import Dsmresult from './Dsmresult'
 
@@ -19,8 +22,12 @@ export default function App() {
     <Router>
       <div>
         <Pages /><hr />
-        <Route exact path='/dsm' component={Dsm} />
         <Route exact path='/' component={Top} />
+        <Route exact path='/dsm' component={Dsm} />
+        <Route exact path='/boadm' component={Boadm}/>
+        <Route exact path='/pts' component={Pts}/>
+        <Route exact path='/ptm' component={Ptm}/>
+        
         <Route exact path="/Afalse">
           {/* fがtrueの時？ falseの時: */}
           {f ? <Redirect to="/" /> : <Afalse />}

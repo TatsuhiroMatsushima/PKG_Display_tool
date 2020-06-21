@@ -71,9 +71,9 @@ export default function Dsm() {
 
     return (
         <div>
-            <h1>Dsm</h1>
+            <h1>DSM</h1>
             <p>このコンポーネントにツールを書く</p>
-            <h2>PKGを入力してください</h2>
+            <h2>PKGを入力してください!</h2>
             <p>
                 {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
@@ -93,7 +93,7 @@ export default function Dsm() {
             </p>
             <h3>PKG：{inputs.pkgname}</h3>
 
-            <h2>CHを入力してください</h2>
+            <h2>CHを入力してください!</h2>
             <p>
                 {/* CH入力ボタン生成 */}
                 {inputnumbers.map(number => (
@@ -141,7 +141,7 @@ export default function Dsm() {
                 <p>ここに絵とマニュアルを描く</p>
             </Modal>
 
-            <Link to="/Afalse">Appのaがtrueの時、/にリダイレクト</Link>
+            <Link to="/Afalse">Appのfがtrueの時、/にリダイレクト</Link>
         </div>
     )
 }
