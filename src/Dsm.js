@@ -47,6 +47,7 @@ export default function Dsm() {
         console.log(inputs.chnumber)
         let block = Math.floor(inputs.chnumber / 16.1)
         let ifnumber = inputs.chnumber - block * 16
+        setVals({ ...inputs, blocknumber: block + 1, ifnumber: ifnumber })
         inputs.blocknumber = block + 1
         inputs.ifnumber = ifnumber
         console.log(`block:${inputs.blocknumber} if:${inputs.ifnumber}`)
@@ -64,8 +65,9 @@ export default function Dsm() {
             <p>
                 {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
-                    <label className="panel-block">
+                    <label className="panel-block"  key={pkg.pkgname}>
                         <input
+                           
                             type='button'
                             value={pkg.pkgname}
                             id={`pkg${pkg.number}`}
@@ -84,7 +86,7 @@ export default function Dsm() {
             <p>
                 {/* CH入力ボタン生成 */}
                 {inputnumbers.map(number => (
-                    <label className="input-number">
+                    <label className="input-number" key={number}>
                         <input
                             type='button'
                             value={number}
@@ -96,10 +98,6 @@ export default function Dsm() {
                     </label>
                 ))}
             </p>
-            {/* <input
-                id='numbers'
-                readOnly
-            /> */}
             <input
                 type='button'
                 value='DELETE'
@@ -112,6 +110,8 @@ export default function Dsm() {
                 onClick={() => { Calculation_Hilight() }}
             />
             <Link to="/dsm/result">検索！</Link>
+            <h3>BLOCK:{inputs.blocknumber}</h3>
+            <h3>IF:{inputs.ifnumber}</h3>
         </div>
     )
 }
