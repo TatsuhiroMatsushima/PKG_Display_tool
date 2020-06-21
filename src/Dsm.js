@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal'
 
 
 export default function Dsm() {
@@ -53,6 +54,16 @@ export default function Dsm() {
         console.log(`block:${inputs.blocknumber} if:${inputs.ifnumber}`)
     }
 
+    //モーダルテスト
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
 
 
     return (
@@ -60,14 +71,13 @@ export default function Dsm() {
             <h1>Dsm</h1>
             <p>このコンポーネントにツールを書く</p>
             <Link to="/Afalse">Appのaがtrueの時、/にリダイレクト</Link>
-
             <h2>PKGを入力してください</h2>
             <p>
                 {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
-                    <label className="panel-block"  key={pkg.pkgname}>
+                    <label className="panel-block" key={pkg.pkgname}>
                         <input
-                           
+
                             type='button'
                             value={pkg.pkgname}
                             id={`pkg${pkg.number}`}
@@ -107,11 +117,23 @@ export default function Dsm() {
             <input
                 type='button'
                 value='検索'
-                onClick={() => { Calculation_Hilight() }}
+                onClick={() => { Calculation_Hilight(); openModal() }}
             />
-            <Link to="/dsm/result">検索！</Link>
+            {/* <Link to="/dsm/result">検索！</Link> */}
             <h3>BLOCK:{inputs.blocknumber}</h3>
             <h3>IF:{inputs.ifnumber}</h3>
+
+
+            {/* <input type="button" value="モーダル表示" className="mr-2" onClick={openModal} /> */}
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Example Modal"
+            >
+                <input type="button" value="閉じる" className="mr-2" onClick={closeModal} />
+                <h3>BLOCK:{inputs.blocknumber}</h3>
+                <h3>IF:{inputs.ifnumber}</h3>
+            </Modal>
         </div>
     )
 }
