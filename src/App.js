@@ -5,15 +5,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import './App.css';
-import Pages from './Pages'
-import Dsm from './Dsm';
-import Top from './Top'
-import Boadm from './Boadm'
-import Pts from './Pts'
-import Ptm from './Ptm'
-import Afalse from './Afalse'
-// import Dsmresult from './Dsmresult'
-
+import {Afalse ,Boadm,Dsm,Pages,Ptm,Pts,Top} from './components/index'
 
 export default function App() {
 
