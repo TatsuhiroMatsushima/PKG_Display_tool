@@ -25,7 +25,7 @@ export default function Dsm() {
     // モーダル管理
     const [modalIsOpen, setIsOpen] = React.useState(false);
     // inputsのpkgnameにPKG名を反映
-    const handleNameChange = val => setVals({ ...inputs, pkgName: val });
+    const handleNameChange = i => setVals({ ...inputs, pkgName: i });
     // inputsのchnumberにch数を反映
     const handleInputNumberChange = i => {
         setVals({ ...inputs, chNumber: Number(inputs.chNumber + i) });
@@ -37,7 +37,7 @@ export default function Dsm() {
 
     // 検索ボタン
     const calculationHilight = () => {
-        console.log(inputs.chNumber)
+        // console.log(inputs.chNumber)
         if (!inputs.pkgName) {
             alert('PKGを選択してください')
         }
@@ -119,7 +119,7 @@ export default function Dsm() {
             >
                 <input type="button" value="閉じる" className="mr-2" onClick={closeModal} />
                 <p>ここに絵とマニュアルを描く</p>
-                <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} />
+                <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} chNumber={inputs.chNumber}/>
             </Modal>
 
             <Link to="/Afalse">Appのfがtrueの時、/にリダイレクト</Link>
