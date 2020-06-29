@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal'
-import { Dsmresult ,Button} from './index';
+import { Dsmresult, Button } from './index';
 
 export default function Dsm() {
     // PKG選択ボタン用配列
@@ -74,7 +74,6 @@ export default function Dsm() {
                 {pkgs.map(pkg => (
                     <label className="panel-block" key={pkg.pkgName}>
                         <input
-
                             type='button'
                             value={pkg.pkgName}
                             id={`pkg${pkg.number}`}
@@ -118,12 +117,14 @@ export default function Dsm() {
                 contentLabel="Example Modal"
             >
                 <input type="button" value="閉じる" className="mr-2" onClick={closeModal} />
-                <p>ここに絵とマニュアルを描く</p>
                 <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} chNumber={inputs.chNumber}/>
             </Modal>
 
+            {/* <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} chNumber={inputs.chNumber} /> */}
             <Link to="/Afalse">Appのfがtrueの時、/にリダイレクト</Link>
-            <Button pkgs={pkgs} handleNameChange={handleNameChange} inputs={inputs}  handleInputNumberChange={ handleInputNumberChange} />
+            <Button pkgs={pkgs} handleNameChange={handleNameChange} inputs={inputs} handleInputNumberChange={handleInputNumberChange} />
+
+
         </div>
     )
 }
