@@ -2,6 +2,8 @@
 npm install
 してください
 
+yarn deploy
+でgithub-pagesに公開
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
