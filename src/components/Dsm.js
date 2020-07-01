@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal'
 import { Dsmresult, Button } from './index';
-
+Modal.setAppElement('#root')
 export default function Dsm() {
     // PKG選択ボタン用配列
     const pkgs = ([
@@ -16,11 +16,10 @@ export default function Dsm() {
         { pkgName: 'SIG', done: false, number: 7 },
         { pkgName: 'LHSD', done: false, number: 8 },
     ]);
-    // 検索ボタン用配列
-    const inputNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
     // PKGとCHの入力管理
     const [inputs, setVals] = React.useState(
-        { pkgName: '', chNumber: '', blockNumber: '', ifNumber: '' }
+        { pkgName: '', number: '', blockNumber: '', ifNumber: '' }
     );
     // モーダル管理
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -28,11 +27,11 @@ export default function Dsm() {
     const handleNameChange = i => setVals({ ...inputs, pkgName: i });
     // inputsのchnumberにch数を反映
     const handleInputNumberChange = i => {
-        setVals({ ...inputs, chNumber: Number(inputs.chNumber + i) });
+        setVals({ ...inputs, number: Number(inputs.number + i) });
     }
     // chnumber初期化
     const numberInit = () => {
-        setVals({ ...inputs, chNumber: "" });
+        setVals({ ...inputs, number: "" });
     }
 
     // 検索ボタン
@@ -41,25 +40,25 @@ export default function Dsm() {
         if (!inputs.pkgName) {
             alert('PKGを選択してください')
         }
-        else if (inputs.chNumber > 96 || !inputs.chNumber) {
+        else if (inputs.number > 96 || !inputs.number) {
             alert('正しいCH番号を入れてください')
         }
         else {
             // 計算部分
-            let block = Math.floor(inputs.chNumber / 16.1)
-            let ifnumber = inputs.chNumber - block * 16
+            let block = Math.floor(inputs.number / 16.1)
+            let ifnumber = inputs.number - block * 16
             setVals({ ...inputs, blockNumber: block + 1, ifNumber: ifnumber })
             // モーダルを開く
-            setIsOpen(true);
+            // setIsOpen(true);
         }
     }
 
     //モーダルテスト
 
-    // function openModal() {
-    //     calculationHilight();
-    //     // setIsOpen(true);
-    // }
+    function openModal() {
+        calculationHilight();
+        setIsOpen(true);
+    }
     function closeModal() {
         setIsOpen(false);
     }
@@ -84,47 +83,19 @@ export default function Dsm() {
             </p>
             <h3>PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
-            <p>
-                {/* CH入力ボタン生成 */}
-                {inputNumbers.map(number => (
-                    <label className="input-number" key={number}>
-                        <input
-                            type='button'
-                            value={number}
-                            onClick={() => { handleInputNumberChange(`${number}`) }}
-                        />
-                    </label>
-                ))}
-            </p>
-            <input
-                type='button'
-                value='DELETE'
-                onClick={() => { numberInit() }}
-            />
-            <h3>CH：{inputs.chNumber}</h3>
-            {/* <input
-                type='button'
-                value='検索'
-                onClick={() => { calculationHilight(); }}
-            /> */}
-            {/* <Link to="/dsm/result">検索！</Link> */}
-            {/* <h3>BLOCK:{inputs.blockNumber}</h3>
-            <h3>IF:{inputs.ifNumber}</h3> */}
-            <input type="button" value="モーダル表示 検索" className="mr-2" onClick={() => { calculationHilight() }} />
+            <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
+            <h3>CH：{inputs.number}</h3>
+            <input type="button" value="モーダル表示 検索" className="mr-2" id="calculation" onClick={() => { openModal() }} />
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                onRequestClose={() => { closeModal() }}
                 contentLabel="Example Modal"
             >
-                <input type="button" value="閉じる" className="mr-2" onClick={closeModal} />
-                <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} chNumber={inputs.chNumber}/>
+                <input type="button" value="閉じる" className="mr-2" onClick={() => { closeModal() }} />
+                <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} number={inputs.number} />
             </Modal>
-
-            {/* <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} chNumber={inputs.chNumber} /> */}
             <Link to="/Afalse">Appのfがtrueの時、/にリダイレクト</Link>
-            <Button pkgs={pkgs} handleNameChange={handleNameChange} inputs={inputs} handleInputNumberChange={handleInputNumberChange} />
-
-
+            {/* <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} number={inputs.number}/> */}
         </div>
     )
 }
