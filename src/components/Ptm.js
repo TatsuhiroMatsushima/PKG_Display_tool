@@ -4,7 +4,7 @@ export default function Pts() {
 return(
     <div>
         <h1>PTM</h1>
-        <p></p>
+        <p>準備中</p>
     </div>
 )
 }

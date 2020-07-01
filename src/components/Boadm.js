@@ -4,7 +4,7 @@ export default function Boadm() {
 return(
     <div>
         <h1>BOADM</h1>
-        <p></p>
+        <p>準備中</p>
     </div>
 )
 }
