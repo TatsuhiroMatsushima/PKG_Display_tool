@@ -12,8 +12,8 @@
 }
 
 .if .blockName {
-  border: 1px solid #999;
-  background-color: silver;
+  border: 1px solid black;
+  background-color: #dadada;
   margin: 1px;
 }
 
@@ -31,21 +31,21 @@
       -ms-flex-align: stretch;
           align-items: stretch;
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid black;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 400px;
-  width: 250px;
+  height: 300px;
+  width: 180px;
   margin: 1px;
   padding: 0;
   text-align: center;
 }
 
-.if .block .ch {
-  background-color: skyblue;
-  border: 1px solid #999;
+.if .block .chNormal {
+  background-color: rgba(157, 255, 0, 0.493);
+  border: 1px solid black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 20px;
@@ -53,5 +53,29 @@
   width: 25%;
   float: left;
   margin: auto;
+}
+
+.if .block .chSig {
+  background-color: rgba(157, 255, 0, 0.493);
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  height: 50%;
+  width: 25%;
+  float: left;
+  margin: auto;
+}
+
+.if .block .chLhsd {
+  background-color: rgba(157, 255, 0, 0.493);
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  height: 33.3333333333333333333333333333333333%;
+  width: 25%;
+  float: left;
+  margin: 0;
 }
 /*# sourceMappingURL=App.css.map */

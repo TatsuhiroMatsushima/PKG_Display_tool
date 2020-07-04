@@ -60,7 +60,6 @@ export default function Dsm() {
     return (
         <div>
             <h1>DSM</h1>
-            <p>このコンポーネントにツールを書く</p>
             <h2>PKGを入力してください</h2>
             <p>
                 {/* PKG選択ボタン生成 */}

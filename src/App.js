@@ -6,7 +6,7 @@ import {  Boadm, Dsm, Pages, Ptm, Pts, Top } from './components/index'
 export default function App() {
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <Pages /><hr />
         <Route exact path='/' component={Top} />
@@ -14,6 +14,7 @@ export default function App() {
         <Route exact path='/boadm' component={Boadm} />
         <Route exact path='/pts' component={Pts} />
         <Route exact path='/ptm' component={Ptm} />
+
         <hr />
       </div>
     </Router>

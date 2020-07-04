@@ -3,9 +3,9 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    .blockName{
-        border: 1px solid #999;
-        background-color: silver;
+    .blockName {
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(218, 218, 218);
         margin: 1px;
     }
     .block {
@@ -14,21 +14,19 @@
         flex-direction: column;
         align-items: stretch;
         background: #fff;
-        border: 1px solid #999;
+        border: 1px solid rgb(0, 0, 0);
         float: left;
         font-size: 24px;
         font-weight: bold;
         line-height: 34px;
-        height: 400px;
-        width: 250px;
-        // margin-right: -1px;
-        // margin-top: -1px;
-    margin: 1px;
+        height: 300px;
+        width: 180px;
+        margin: 1px;
         padding: 0;
         text-align: center;
-        .ch {
-            background-color: skyblue;
-            border: 1px solid #999;
+        .chNormal {
+            background-color: rgba(157, 255, 0, 0.493);
+            border: 1px solid rgb(0, 0, 0);
             box-sizing: border-box;
             font-size: 20px;
             height: 25%;
@@ -48,48 +46,48 @@
             //     -webkit-transform: translateY(-50%) translateX(-50%);
             // }
         }
-        // .sig {
-        //     background-color: skyblue;
-        //     border: 1px solid #999;
-        //     box-sizing: border-box;
-        //     font-size: 20px;
-        //     height: 50%;
-        //     width: 25%;
-        //     float: left;
-        //     position: relative;
-        //     .name {
-        //         color: green;
-        //         position: absolute;
-        //         top: 50%;
-        //         /*親要素を起点に上から50%*/
-        //         left: 50%;
-        //         /*親要素を起点に左から50%*/
-        //         transform: translateY(-50%) translateX(-50%);
-        //         /*要素の大きさの半分ずつを戻す*/
-        //         -webkit-transform: translateY(-50%) translateX(-50%);
-        //     }
-        // }
+        .chSig {
+            background-color: rgba(157, 255, 0, 0.493);
+            border: 1px solid rgb(0, 0, 0);
+            box-sizing: border-box;
+            font-size: 20px;
+            height: 50%;
+            width: 25%;
+            float: left;
+            margin: auto;
+            //     .name {
+            //         color: green;
+            //         position: absolute;
+            //         top: 50%;
+            //         /*親要素を起点に上から50%*/
+            //         left: 50%;
+            //         /*親要素を起点に左から50%*/
+            //         transform: translateY(-50%) translateX(-50%);
+            //         /*要素の大きさの半分ずつを戻す*/
+            //         -webkit-transform: translateY(-50%) translateX(-50%);
+            //     }
+        }
 
-        // .lhsd {
-        //     background-color: skyblue;
-        //     border: 1px solid #999;
-        //     box-sizing: border-box;
-        //     font-size: 20px;
-        //     height: 33%;
-        //     width: 25%;
-        //     float: left;
-        //     position: relative;
-        //     .name {
-        //         color: green;
-        //         position: absolute;
-        //         top: 50%;
-        //         /*親要素を起点に上から50%*/
-        //         left: 50%;
-        //         /*親要素を起点に左から50%*/
-        //         transform: translateY(-50%) translateX(-50%);
-        //         /*要素の大きさの半分ずつを戻す*/
-        //         -webkit-transform: translateY(-50%) translateX(-50%);
-        //     }
-        // }
+        .chLhsd {
+            background-color: rgba(157, 255, 0, 0.493);
+            border: 1px solid rgb(0, 0, 0);
+            box-sizing: border-box;
+            font-size: 20px;
+            height: 33.3333333333333333333333333333333333%;
+            width: 25%;
+            float: left;
+            margin: 0 ;
+            //     .name {
+            //         color: green;
+            //         position: absolute;
+            //         top: 50%;
+            //         /*親要素を起点に上から50%*/
+            //         left: 50%;
+            //         /*親要素を起点に左から50%*/
+            //         transform: translateY(-50%) translateX(-50%);
+            //         /*要素の大きさの半分ずつを戻す*/
+            //         -webkit-transform: translateY(-50%) translateX(-50%);
+            //     }
+        }
     }
 }

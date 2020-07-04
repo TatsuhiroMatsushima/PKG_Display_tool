@@ -21,11 +21,10 @@ export default function Dsmresult(props) {
         }
     }
     return (
-        <div>
-            <h1>検索結果</h1>
-            {props.pkgName}
-            <p>BLOCK:{props.blockNumber}</p>
-            <p>IF:{props.ifNumber}</p>
+        <div className="dsmResult">
+            <h2>PKG:{props.pkgName}</h2>
+            <h2>BLOCK:{props.blockNumber}</h2>
+            <h2>IF:{props.ifNumber}</h2>
             <Result />
         </div>
     )
