@@ -3,8 +3,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -27,9 +25,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   background: #fff;
   border: 1px solid black;
   float: left;
@@ -40,12 +35,11 @@
   width: 180px;
   margin: 1px;
   padding: 0;
-  text-align: center;
 }
 
 .if .block .chNormal {
   background-color: rgba(157, 255, 0, 0.493);
-  border: 1px solid black;
+  border: 1px solid #727272;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 20px;
@@ -69,11 +63,11 @@
 
 .if .block .chLhsd {
   background-color: rgba(157, 255, 0, 0.493);
-  border: 1px solid black;
+  border: 1px solid #727272;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 20px;
-  height: 33.3333333333333333333333333333333333%;
+  height: 33%;
   width: 25%;
   float: left;
   margin: 0;
