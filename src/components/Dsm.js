@@ -5,17 +5,7 @@ import { Dsmresult, Button } from './index';
 Modal.setAppElement('#root')
 export default function Dsm() {
     // PKG選択ボタン用配列
-    const pkgs = ([
-        { pkgName: 'VFCHP', done: false, number: 0 },
-        { pkgName: 'VT-1', done: false, number: 1 },
-        { pkgName: 'EQL', done: false, number: 2 },
-        { pkgName: '64kIF', done: false, number: 3 },
-        { pkgName: 'OCU-5', done: false, number: 4 },
-        { pkgName: 'VT-2', done: false, number: 5 },
-        { pkgName: 'VT-3', done: false, number: 6 },
-        { pkgName: 'SIG', done: false, number: 7 },
-        { pkgName: 'LHSD', done: false, number: 8 },
-    ]);
+    const pkgs = ['VFCHP', 'VT-1', 'EQL', '64kIF', 'OCU-5', 'VT-2', 'VT-3', 'SIG', 'LHSD']
 
     // PKGとCHの入力管理
     const [inputs, setVals] = React.useState(
@@ -64,12 +54,11 @@ export default function Dsm() {
             <p>
                 {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
-                    <label className="panel-block" key={pkg.pkgName}>
+                    <label className="panel-block" key={pkg}>
                         <input
                             type='button'
-                            value={pkg.pkgName}
-                            id={`pkg${pkg.number}`}
-                            onClick={() => { handleNameChange(`${pkg.pkgName}`); }}
+                            value={pkg}
+                            onClick={() => { handleNameChange(`${pkg}`); }}
                         />
                     </label>
                 ))}
