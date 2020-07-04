@@ -39,7 +39,32 @@ export default function Dsm() {
             let ifnumber = inputs.number - block * 16
             setVals({ ...inputs, blockNumber: block + 1, ifNumber: ifnumber })
             // モーダルを開く
-            setIsOpen(true);
+            switch (inputs.pkgName) {
+                case "VFCHP":
+                case "VT-1":
+                case "EQL":
+                case "64kIF":
+                case "OCU-5":
+                    setIsOpen(true);
+                    break
+                case "SIG":
+                case "VT-2":
+                case "VT-3":
+                    if (ifnumber % 4 === 0 || ifnumber === 3 || ifnumber === 7 || ifnumber === 11 || ifnumber === 16) {
+                        alert('正しいCH番号を入れてください')
+                    }
+                    else { setIsOpen(true); }
+                    break
+                case "LHSD":
+                    if (ifnumber > 9) {
+                        alert('正しいCH番号を入れてください')
+                    }
+                    else { setIsOpen(true); }
+                    break
+                default:
+                    alert('想定外の動作が起きました')
+                    break
+            }
         }
     }
 
