@@ -23,9 +23,9 @@ export default function Dsmresult(props) {
     return (
         <div>
             <h1>検索結果</h1>
+            {props.pkgName}
             <p>BLOCK:{props.blockNumber}</p>
             <p>IF:{props.ifNumber}</p>
-            {props.pkgName}
             <Result />
         </div>
     )

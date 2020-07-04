@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Modal from 'react-modal'
 import { Dsmresult, Button } from './index';
 Modal.setAppElement('#root')
@@ -49,16 +49,10 @@ export default function Dsm() {
             let ifnumber = inputs.number - block * 16
             setVals({ ...inputs, blockNumber: block + 1, ifNumber: ifnumber })
             // モーダルを開く
-            // setIsOpen(true);
+            setIsOpen(true);
         }
     }
 
-    //モーダルテスト
-
-    function openModal() {
-        calculationHilight();
-        setIsOpen(true);
-    }
     function closeModal() {
         setIsOpen(false);
     }
@@ -85,7 +79,7 @@ export default function Dsm() {
             <h2>CHを入力してください</h2>
             <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
             <h3>CH：{inputs.number}</h3>
-            <input type="button" value="モーダル表示 検索" className="mr-2" id="calculation" onClick={() => { openModal() }} />
+            <input type="button" value="モーダル表示 検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => { closeModal() }}
@@ -94,8 +88,7 @@ export default function Dsm() {
                 <input type="button" value="閉じる" className="mr-2" onClick={() => { closeModal() }} />
                 <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} number={inputs.number} />
             </Modal>
-            <Link to="/Afalse">Appのfがtrueの時、/にリダイレクト</Link>
-            {/* <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} number={inputs.number}/> */}
+
         </div>
     )
 }
