@@ -91,12 +91,12 @@ export default function Dsm() {
             <h3>PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
             <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
-            <h3>CH：{inputs.number}</h3>
-            <input type="button" value="モーダル表示 検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
+                <h3>CH：{inputs.number}</h3>
+            <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => { closeModal() }}
-                contentLabel="Example Modal"
+                contentLabel="Modal"
             >
                 <input type="button" value="閉じる" className="mr-2" onClick={() => { closeModal() }} />
                 <Dsmresult blockNumber={inputs.blockNumber} ifNumber={inputs.ifNumber} pkgName={inputs.pkgName} number={inputs.number} />

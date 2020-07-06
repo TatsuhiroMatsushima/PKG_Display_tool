@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .if {
   text-align: center;
   display: -webkit-box;
@@ -32,7 +33,7 @@
   font-weight: bold;
   line-height: 34px;
   height: 300px;
-  width: 180px;
+  width: 120px;
   margin: 1px;
   padding: 0;
 }
@@ -47,6 +48,17 @@
   width: 25%;
   float: left;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 縦方向中央揃え */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* 横方向中央揃え */
 }
 
 .if .block .chSig {
@@ -59,6 +71,17 @@
   width: 25%;
   float: left;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 縦方向中央揃え */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* 横方向中央揃え */
 }
 
 .if .block .chLhsd {
@@ -71,5 +94,16 @@
   width: 25%;
   float: left;
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 縦方向中央揃え */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* 横方向中央揃え */
 }
 /*# sourceMappingURL=App.css.map */
