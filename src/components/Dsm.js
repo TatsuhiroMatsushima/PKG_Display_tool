@@ -50,7 +50,7 @@ export default function Dsm() {
                 case "SIG":
                 case "VT-2":
                 case "VT-3":
-                    if (ifnumber % 4 === 0 || ifnumber === 3 || ifnumber === 7 || ifnumber === 11 || ifnumber === 16) {
+                    if (ifnumber % 4 === 0 || ifnumber === 3 || ifnumber === 7 || ifnumber === 11 || ifnumber===15 || ifnumber === 16) {
                         alert('正しいCH番号を入れてください')
                     }
                     else { setIsOpen(true); }
