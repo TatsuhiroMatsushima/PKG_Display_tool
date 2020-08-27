@@ -50,7 +50,7 @@ export default function Dsm() {
                 case "SIG":
                 case "VT-2":
                 case "VT-3":
-                    if (ifnumber % 4 === 0 || ifnumber === 3 || ifnumber === 7 || ifnumber === 11 || ifnumber===15 || ifnumber === 16) {
+                    if (ifnumber % 4 === 0 || ifnumber === 3 || ifnumber === 7 || ifnumber === 11 || ifnumber === 15 || ifnumber === 16) {
                         alert('正しいCH番号を入れてください')
                     }
                     else { setIsOpen(true); }
@@ -91,7 +91,7 @@ export default function Dsm() {
             <h3>PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
             <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
-                <h3>CH：{inputs.number}</h3>
+            <h3>CH：{inputs.number}</h3>
             <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
                 isOpen={modalIsOpen}
