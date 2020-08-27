@@ -3,6 +3,10 @@
   font-size: 40px;
 }
 
+.memo {
+  color: rosybrown;
+}
+
 .if {
   text-align: center;
   display: -webkit-box;
