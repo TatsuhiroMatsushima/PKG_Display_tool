@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './assets/styles/App.css';
-import {  Boadm, Dsm, Pages, Ptm, Pts, Top } from './components/index'
+import { Boadm, Dsm, Pages, Ptm, Pts, Top } from './components/index'
 
 export default function App() {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div>
+        <div className="title">PKG位置表示ツール</div>
         <Pages /><hr />
-        <Route exact path='/' component={Top} />
         <Route exact path='/dsm' component={Dsm} />
         <Route exact path='/boadm' component={Boadm} />
         <Route exact path='/pts' component={Pts} />
@@ -19,5 +19,5 @@ export default function App() {
       </div>
     </Router>
   );
-  
+
 }
