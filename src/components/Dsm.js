@@ -90,12 +90,12 @@ export default function Dsm() {
                 ))}
             </p>
             <p className="memo">（↓inputs.pkgNameが変わったら色を変更したい）</p>
-            <h3>PKG：{inputs.pkgName}</h3>
+            <h3 style={inputs.pkgName === "" ? { background: "red" } : {}} >PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
             <p className="memo">（トラチケの読み方を追記したい）</p>
             <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
             <p className="memo">（↓inputs.chNumberが変わったら色を変更したい）</p>
-            <h3>CH：{inputs.number}</h3>
+            <h3 style={inputs.number === "" ? { background: "red" } : {}} >CH：{inputs.number}</h3>
             <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
                 isOpen={modalIsOpen}
