@@ -8,7 +8,7 @@ export default function Boadm() {
 
     // PKGとCHの入力管理
     const [inputs, setVals] = React.useState(
-        { pkgName: '', number1: '', number2: '', number3: '', baySelect: '', unitSelect: '', blockNumber: '', ifNumber: '' }
+        { pkgName: '', number1: '', number2: '', number3: '', baySelect: '', unitSelect: '' }
     );
     // モーダル管理
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -37,14 +37,10 @@ export default function Boadm() {
     }
 
     // 検索ボタン
-    const calculationHilight = () => {
-        // console.log(inputs.chNumber)
+    const calculationHilight1 = () => {
         if (!inputs.pkgName) {
             alert('PKGを選択してください')
         }
-        // else if (inputs.number1 > 96 || !inputs.number1) {
-        //     alert('正しいCH番号を入れてください')
-        // }
         else {
             switch (inputs.number1) {
                 case 1:
@@ -59,22 +55,23 @@ export default function Boadm() {
                     alert(`${inputs.baySelect}`)
                     break
             }
-
             switch (inputs.number2) {
                 case 1:
                     setVals({ ...inputs, unitSelect: '1' })
-                    setIsOpen(true);
+                    // setIsOpen(true);
                     break
                 case 2:
                     setVals({ ...inputs, unitSelect: '2' })
-                    setIsOpen(true);
+                    // setIsOpen(true);
                     break
                 default:
                     alert('想定外の動作が起きました2')
                     break
             }
         }
+        console.log(inputs)
     }
+
 
     function closeModal() {
         setIsOpen(false);
@@ -98,7 +95,7 @@ export default function Boadm() {
                 ))}
             </p>
             {/* <p className="memo">（↓inputs.pkgNameが変わったら色を変更したい）</p> */}
-            <h3 style={inputs.pkgName === '' ? { background: "red" } : {}} >PKG：{inputs.pkgName}</h3>
+            <h3 style={inputs.pkgName === '' ? { background: "red" } : {}} >PKG：{inputs.pkgName}{inputs.baySelect}</h3>
             <h2>トラチケ情報を入力してください</h2>
             {/* <p className="memo">（トラチケの読み方を追記したい）</p> */}
             <Button handleInputNumberChange={handleInputNumber1Change} />
@@ -108,7 +105,7 @@ export default function Boadm() {
 
             {/* <p className="memo">（↓inputs.chNumberが変わったら色を変更したい）</p> */}
             <h3 style={inputs.number1 === '' ? { background: "red" } : {}} >{inputs.number1}-{inputs.number2}-{inputs.number3}</h3>
-            <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
+            <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight1() }} />
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => { closeModal() }}
