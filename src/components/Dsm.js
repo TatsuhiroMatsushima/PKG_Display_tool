@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Link } from 'react-router-dom';
 import Modal from 'react-modal'
-import { Dsmresult, Button } from './index';
+import { Dsmresult, Button, Delete } from './index';
 Modal.setAppElement('#root')
 export default function Dsm() {
     // PKG選択ボタン用配列
@@ -93,7 +93,8 @@ export default function Dsm() {
             <h3 style={inputs.pkgName === "" ? { background: "red" } : {}} >PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
             <p className="memo">（トラチケの読み方を追記したい）</p>
-            <Button handleInputNumberChange={handleInputNumberChange} numberInit={numberInit} />
+            <Button handleInputNumberChange={handleInputNumberChange} />
+            <Delete numberInit={numberInit} />
             <p className="memo">（↓inputs.chNumberが変わったら色を変更したい）</p>
             <h3 style={inputs.number === "" ? { background: "red" } : {}} >CH：{inputs.number}</h3>
             <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />

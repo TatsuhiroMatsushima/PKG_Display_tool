@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './assets/styles/App.css';
-import { Boadm, Dsm, Pages, Ptm, Pts, Top } from './components/index'
+import { Boadm, Dsm, Pages, Ptm, Pts } from './components/index'
 
 export default function App() {
 

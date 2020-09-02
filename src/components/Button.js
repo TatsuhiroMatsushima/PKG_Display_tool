@@ -16,11 +16,6 @@ export default function Button(props) {
                     </label>
                 ))}
             </p>
-            <input
-                type='button'
-                value='DELETE'
-                onClick={() => { props.numberInit() }}
-            />
         </div>
     )
 }
