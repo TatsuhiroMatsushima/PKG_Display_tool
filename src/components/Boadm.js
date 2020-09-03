@@ -37,11 +37,11 @@ export default function Boadm() {
     }
 
     // 検索ボタン
-    const calculationHilight1 = () => {
-        if (!inputs.pkgName) {
-            alert('PKGを選択してください')
-        }
-        else {
+    const calculationHilight = () => {
+        // if (!inputs.pkgName) {
+            // alert('PKGを選択してください')
+        // }
+         {
             switch (inputs.number1) {
                 case 1:
                     setVals({ ...inputs, baySelect: '基本架' })
@@ -52,9 +52,10 @@ export default function Boadm() {
                     // setIsOpen(true);
                     break
                 default:
-                    alert(`${inputs.baySelect}`)
+                    // alert(`${inputs.baySelect}`)
                     break
-            }
+            };
+
             switch (inputs.number2) {
                 case 1:
                     setVals({ ...inputs, unitSelect: '1' })
@@ -65,13 +66,13 @@ export default function Boadm() {
                     // setIsOpen(true);
                     break
                 default:
-                    alert('想定外の動作が起きました2')
+                    // alert('想定外の動作が起きました2')
                     break
             }
+
         }
         console.log(inputs)
     }
-
 
     function closeModal() {
         setIsOpen(false);
@@ -94,18 +95,18 @@ export default function Boadm() {
                     </label>
                 ))}
             </p>
-            {/* <p className="memo">（↓inputs.pkgNameが変わったら色を変更したい）</p> */}
             <h3 style={inputs.pkgName === '' ? { background: "red" } : {}} >PKG：{inputs.pkgName}{inputs.baySelect}</h3>
             <h2>トラチケ情報を入力してください</h2>
-            {/* <p className="memo">（トラチケの読み方を追記したい）</p> */}
+            {/* トラチケ入力ボタン */}
             <Button handleInputNumberChange={handleInputNumber1Change} />
             <Button handleInputNumberChange={handleInputNumber2Change} />
             <Button handleInputNumberChange={handleInputNumber3Change} />
+            {/* 削除ボタン */}
             <Delete numberInit={numberInit} />
 
-            {/* <p className="memo">（↓inputs.chNumberが変わったら色を変更したい）</p> */}
+
             <h3 style={inputs.number1 === '' ? { background: "red" } : {}} >{inputs.number1}-{inputs.number2}-{inputs.number3}</h3>
-            <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight1() }} />
+            <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={() => { closeModal() }}
