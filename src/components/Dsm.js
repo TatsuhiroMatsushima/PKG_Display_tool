@@ -76,7 +76,6 @@ export default function Dsm() {
         <div>
             <h1>DSM</h1>
             <h2>PKGを入力してください</h2>
-            <p className="memo">（トラチケの読み方を追記したい）</p>
             <p>
                 {/* PKG選択ボタン生成 */}
                 {pkgs.map(pkg => (
@@ -89,13 +88,13 @@ export default function Dsm() {
                     </label>
                 ))}
             </p>
-            <p className="memo">（↓inputs.pkgNameが変わったら色を変更したい）</p>
+
             <h3 style={inputs.pkgName === "" ? { background: "red" } : {}} >PKG：{inputs.pkgName}</h3>
             <h2>CHを入力してください</h2>
-            <p className="memo">（トラチケの読み方を追記したい）</p>
+
             <Button handleInputNumberChange={handleInputNumberChange} />
             <Delete numberInit={numberInit} />
-            <p className="memo">（↓inputs.chNumberが変わったら色を変更したい）</p>
+
             <h3 style={inputs.number === "" ? { background: "red" } : {}} >CH：{inputs.number}</h3>
             <input type="button" value="検索" className="mr-2" id="calculation" onClick={() => { calculationHilight() }} />
             <Modal
