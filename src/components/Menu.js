@@ -7,9 +7,8 @@ export default function Menu() {
             <h1><Link to="/">MainMenu</Link></h1>
             {/* <h2>ページ更新をするとエラーになります!!!</h2> */}
             <div>
-                <p>トラチケ情報を入力し、各種装置のPKG搭載位置を表示するアプリ</p>
+                <p>トラチケ情報を入力し、各種装置のPKG搭載位置を表示するツール</p>
                 <p>先行版としてDSMのPKG表示機能を実装</p>
-                <p　className="memo">（BOADMの機能を実装中）</p>
             </div>
             {/* <p><Link to="/">Top</Link></p> */}
             <p><Link to="/dsm">DSM CH-P特定ツール</Link></p>

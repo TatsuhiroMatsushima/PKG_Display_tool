@@ -5,8 +5,8 @@ export default function BoadmWidth2(props) {
 
    return (
        <div>
-           <h1>Width1</h1>
-           <div className="boadm-unit boadm-width1">
+           <h1>Width2</h1>
+           <div className="boadm-unit boadm-width2">
                <div className="boadm-slot-frame">
                    <div className="boadm-fan-frame">
                        <div className="boadm-fan">FAN(1)</div>

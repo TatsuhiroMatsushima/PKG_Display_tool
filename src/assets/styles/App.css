@@ -124,23 +124,30 @@ body .dsmResult .if .block .chLhsd {
   /* 横方向中央揃え */
 }
 
+body .boadm-result {
+  text-align: center;
+}
+
+body .boadm-result .boadm-unit {
+  width: 720px;
+  display: inline-block;
+  text-align: center;
+}
+
 body .boadm-result .boadm-unit .boadm-fan-frame {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 body .boadm-result .boadm-unit .boadm-fan-frame .boadm-fan {
   background: #eceb93;
   border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
   font-size: 24px;
   font-weight: bold;
-  line-height: 34px;
   height: 30px;
   width: 33%;
   margin: 1px;
@@ -155,38 +162,52 @@ body .boadm-result .boadm-unit .boadm-slot-frame {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+}
+
+body .boadm-result .boadm-unit .boadm-slot-frame .boadm-slot-name-frame {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 body .boadm-result .boadm-unit .boadm-slot-frame .boadm-slot-name-frame .boadm-slot-name {
-  background: #dfdfdf;
+  background: #b3b3b3;
   border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
   text-align: right;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 34px;
   height: 30px;
-  width: 30px;
+  width: 5%;
   margin: 1px;
   padding: 0;
 }
 
+body .boadm-result .boadm-unit .boadm-slot-frame .boadm-slot {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 body .boadm-result .boadm-unit .boadm-slot-frame .boadm-slot .boadm-slot-pkg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background: #09ecec;
   border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   height: 200px;
-  width: 30px;
+  width: 5%;
   margin: 1px;
   padding: 0;
 }
